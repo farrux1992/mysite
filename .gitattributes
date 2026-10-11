@@ -1,0 +1,2 @@
+# Bash skriptlar Windows'da ham LF bilan qolsin (CRLF bilan bash ishlamaydi)
+*.sh text eol=lf
