@@ -15,7 +15,7 @@
 ## Texnik chegaralar
 - Faqat oddiy HTML, CSS va JS ishlatiladi: framework, kutubxona va build bosqichi yo'q.
 - JS minimal bo'ladi. Sayt JS'siz ham to'liq ishlashi kerak.
-- Animatsiya yo'q (faqat menyu havolalari uchun silliq aylantirish bundan mustasno). Mobil birinchi: 375px kenglikda sahifa yonga surilmasligi kerak.
+- Animatsiya faqat yengil va tez: 0.2–0.5s, harakat 16px'gacha. Hammasi `prefers-reduced-motion` bilan o'chadi. Hozirgilari: silliq aylantirish (`style.css` boshida); scroll'da paydo bo'lish, karta hover, akkordeon, hero'ning ochilishi (`style.css` oxiridagi "Jonlanish" blokida). Animatsiya kontentni JS'siz yashirmasligi kerak. Mobil birinchi: 375px kenglikda sahifa yonga surilmasligi kerak.
 - Rasmlar `assets/` papkasida. Rasm bo'lmasa, CSS orqali zaxira (masalan "FZ") ko'rinadi.
 
 ## Ish qoidalari
