@@ -74,6 +74,11 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+/* Menyu havolalari bosilganda silliq aylantirish (harakatni o'chirganlarda emas) */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 body {
   background: var(--bg);
   color: var(--text);

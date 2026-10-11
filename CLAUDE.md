@@ -15,7 +15,7 @@
 ## Texnik chegaralar
 - Faqat oddiy HTML, CSS va JS ishlatiladi: framework, kutubxona va build bosqichi yo'q.
 - JS minimal bo'ladi. Sayt JS'siz ham to'liq ishlashi kerak.
-- Animatsiya yo'q. Mobil birinchi: 375px kenglikda sahifa yonga surilmasligi kerak.
+- Animatsiya yo'q (faqat menyu havolalari uchun silliq aylantirish bundan mustasno). Mobil birinchi: 375px kenglikda sahifa yonga surilmasligi kerak.
 - Rasmlar `assets/` papkasida. Rasm bo'lmasa, CSS orqali zaxira (masalan "FZ") ko'rinadi.
 
 ## Ish qoidalari
