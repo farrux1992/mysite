@@ -1,0 +1,25 @@
+# Maxfiy sozlamalar (parol, kalit, token)
+.env
+.env.*
+!.env.example
+
+# Node (mahalliy server uchun)
+node_modules/
+npm-debug.log*
+
+# Loglar va vaqtinchalik fayllar
+*.log
+*.tmp
+*.bak
+
+# Operatsion tizim fayllari
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Muharrir sozlamalari
+.vscode/
+.idea/
+
+# Claude Code'ning shaxsiy sozlamalari
+.claude/settings.local.json
