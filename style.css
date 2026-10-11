@@ -821,3 +821,19 @@ a:focus-visible {
   .projects,
   .quotes { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
+
+/* ===== Jonlanish: yengil va tez, harakatni o'chirganlarda ishlamaydi ===== */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Scroll'da paydo bo'lish: .reveal-on klassini script.js qo'yadi */
+  .reveal-on .reveal { opacity: 0; }
+  .reveal-on .reveal.is-visible { animation: rise 0.45s ease-out both; }
+
+  /* Yonma-yon kartalar ketma-ket chiqadi */
+  .reveal-on .reveal.is-visible:nth-child(2) { animation-delay: 0.06s; }
+  .reveal-on .reveal.is-visible:nth-child(3) { animation-delay: 0.12s; }
+}

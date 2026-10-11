@@ -28,6 +28,12 @@ function applyTheme(theme) {
 // Sahifa chizilishidan oldin darhol qo'yiladi
 applyTheme(getSavedTheme() || (systemLight.matches ? "light" : "dark"));
 
+// ===== Scroll'da paydo bo'lish =====
+// Kontent faqat JS ishlasa va harakat o'chirilmagan bo'lsa yashiriladi
+const canReveal = "IntersectionObserver" in window &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (canReveal) root.classList.add("reveal-on");
+
 // Tanlov qilinmagan bo'lsa, qurilma temasi o'zgarganda sayt ham o'zgaradi
 systemLight.addEventListener("change", (e) => {
   if (!getSavedTheme()) applyTheme(e.matches ? "light" : "dark");
@@ -43,6 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
     saveTheme(next);
     applyTheme(next);
   });
+
+  // Element ekranga kirganda bir marta paydo bo'ladi
+  if (canReveal) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  }
 
   // Footerdagi yilni avtomatik yangilaydi (JS o'chiq bo'lsa, HTMLdagi yil qoladi)
   document.getElementById("year").textContent = new Date().getFullYear();
