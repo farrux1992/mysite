@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- Favicon PNG manbasi: icon.html?size=32 yoki icon.html?size=180&square
+     square — iPhone uchun burchaksiz (iOS o'zi yumaloqlaydi). Yasash: .claude/og/build.sh
+     Belgi chap yuqori burchakka aniq o'lchamda chiziladi: headless oyna tor bo'lolmaydi,
+     skrinshot esa aynan shu burchakdan kesib olinadi. -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: transparent; overflow: hidden; }
+  svg { display: block; position: absolute; top: 0; left: 0; }
+</style>
+</head>
+<body>
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <rect id="bg" width="24" height="24" rx="5.5" fill="#0b1220"/>
+  <path id="spark" fill="#f5b544" transform="translate(12 12) scale(1.1) translate(-12 -10)" d="M12 2c.6 4.9 2.9 7.4 8 8-5.1.6-7.4 3.1-8 8-.6-4.9-2.9-7.4-8-8 5.1-.6 7.4-3.1 8-8z"/>
+</svg>
+<script>
+  const params = new URLSearchParams(location.search);
+  const size = params.get("size") || "180";
+  const icon = document.getElementById("icon");
+  icon.setAttribute("width", size);
+  icon.setAttribute("height", size);
+
+  // iPhone ikonkasi: to'liq kvadrat fon va belgi atrofida ko'proq bo'sh joy
+  if (params.has("square")) {
+    document.getElementById("bg").setAttribute("rx", "0");
+    document.getElementById("spark").setAttribute("transform", "translate(12 12) scale(0.85) translate(-12 -10)");
+  }
+</script>
+</body>
+</html>
