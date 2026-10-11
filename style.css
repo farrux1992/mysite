@@ -837,3 +837,20 @@ a:focus-visible {
   .reveal-on .reveal.is-visible:nth-child(2) { animation-delay: 0.06s; }
   .reveal-on .reveal.is-visible:nth-child(3) { animation-delay: 0.12s; }
 }
+
+/* Kartalar: sichqoncha kelganda biroz ko'tariladi (telefonda emas) */
+@media (hover: hover) {
+  .project,
+  .quote { transition: border-color 0.2s ease-out; }
+
+  .project:hover,
+  .quote:hover { border-color: var(--accent-strong); }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .project,
+  .quote { transition: border-color 0.2s ease-out, translate 0.2s ease-out; }
+
+  .project:hover,
+  .quote:hover { translate: 0 -4px; }
+}
