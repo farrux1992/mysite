@@ -641,6 +641,73 @@ a:focus-visible {
 
 .project-result strong { color: var(--text); font-weight: 600; }
 
+/* Mijozlar fikri */
+.testimonials {
+  padding: 72px 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.quotes {
+  display: grid;
+  gap: 16px;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.quote::before {
+  content: "\201C";
+  height: 28px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-strong);
+}
+
+.quote blockquote p { font-size: 16px; }
+
+.quote figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+/* Rasm o'rniga bosh harflar */
+.quote-avatar {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.quote figcaption strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.quote-role {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 /* Aloqa */
 .contact {
   padding: 72px 0;
@@ -689,6 +756,8 @@ a:focus-visible {
   .service-content h2 { font-size: 36px; }
 
   .projects-section,
+  .testimonials,
   .contact { padding: 104px 0; }
-  .projects { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .projects,
+  .quotes { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
